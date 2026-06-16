@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EUG Corporate Business Card</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+    --primary-red: #8B1E22;
+    --dark-gray: #2A2A2A;
+    --light-gray: #F5F6F8;
+    --border-color: #D1D5DB;
+    --text-muted: #555555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #E5E7EB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.business-card {
+    width: 700px;
+    height: 400px;
+    background-color: var(--light-gray);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.business-card::before {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(139,30,34,0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    z-index: 2;
+}
+
+.logo-placeholder {
+    height: 65px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    z-index: 2;
+}
+
+.left-panel {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-red);
+    object-fit: cover;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.vertical-divider {
+    width: 2px;
+    height: 140px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--border-color),
+        transparent
+    );
+    margin: 0 20px;
+}
+
+.right-panel {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-name {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.user-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-red);
+    text-transform: uppercase;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+    font-size: 14px;
+}
+
+.contact-item i {
+    color: var(--primary-red);
+    width: 20px;
+    margin-right: 12px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 18px;
+    margin-top: 15px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 500;
+    transition: .2s;
+}
+
+.social-link i {
+    margin-right: 6px;
+    color: var(--dark-gray);
+}
+
+.social-link:hover,
+.social-link:hover i {
+    color: var(--primary-red);
+}
+
+/* SAVE CONTACT BUTTON */
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    z-index: 2;
+}
+
+.save-contact-btn {
+    border: none;
+    background: var(--primary-red);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: .2s ease;
+}
+
+.save-contact-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+.save-contact-btn i {
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .business-card {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .card-body {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%;
+    }
+
+    .profile-circle {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 15px;
+    }
+
+    .vertical-divider {
+        width: 80%;
+        height: 1px;
+        margin: 15px auto;
+        background: linear-gradient(
+            to right,
+            transparent,
+            var(--border-color),
+            transparent
+        );
+    }
+
+    .user-name {
+        font-size: 22px;
+    }
+
+    .user-title {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .contact-item {
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    .social-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .logo-placeholder {
+        height: 50px;
+    }
+
+    .save-contact-btn {
+        width: 100%;
+        max-width: 220px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .user-name {
+        font-size: 20px;
+    }
+
+    .user-title {
+        font-size: 12px;
+    }
+
+    .contact-item {
+        font-size: 12px;
+    }
+
+    .profile-circle {
+        width: 95px;
+        height: 95px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="business-card">
+
+    <div class="card-header">
+        <img
+            src="EUG_LOGO_High_res.png"
+            alt="EUG Logo"
+            class="logo-placeholder"
+            onerror="this.src='https://placehold.co/300x70?text=EUG+LOGO'"
+        >
+    </div>
+
+    <div class="card-body">
+
+        <div class="left-panel">
+            <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=256&h=256"
+                alt="Profile"
+                class="profile-circle"
+            >
+        </div>
+
+        <div class="vertical-divider"></div>
+
+        <div class="right-panel">
+
+            <div class="user-name">Mohamed Hussein</div>
+
+            <div class="user-title">
+                IT Manager
+            </div>
+
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+20 100 2730 565</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>mhussein@eug.petroleum.gov.eg</span>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.eug.petroleum.gov.eg" target="_blank" class="social-link">
+                    <i class="fa-solid fa-globe"></i>
+                    Website
+                </a>
+
+                <a href="https://linkedin.com/company/egypt-upstream-gateway" target="_blank" class="social-link">
+                    <i class="fa-brands fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card-footer">
+        <button class="save-contact-btn" onclick="downloadVCard()">
+            <i class="fa-solid fa-address-book"></i>
+            Save Contact
+        </button>
+    </div>
+
+</div>
+
+<script>
+function downloadVCard() {
+
+    const vCard = `BEGIN:VCARD
+VERSION:3.0
+FN:Mohamed Hussein
+ORG:Egypt Upstream Gateway
+TITLE:IT Manager
+TEL:+201002730565
+EMAIL:mhussein@eug.petroleum.gov.eg
+URL:https://www.eug.petroleum.gov.eg
+END:VCARD`;
+
+    const blob = new Blob([vCard], {
+        type: 'text/vcard;charset=utf-8'
+    });
+
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'Mohamed_Hussein.vcf';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(link.href);
+}
+</script>
+
+</body>
+</html>
